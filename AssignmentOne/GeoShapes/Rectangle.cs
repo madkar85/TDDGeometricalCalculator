@@ -28,7 +28,8 @@ namespace AssignmentOne.GeoShapes
 
             }
 
-            return Base * Height;
+            var result =  Base * Height;
+            return (float)Math.Round(result, 2);
         }
         /// <summary>
         /// Räknar ut omkretsen på en rektangel

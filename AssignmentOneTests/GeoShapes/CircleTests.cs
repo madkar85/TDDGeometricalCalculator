@@ -11,76 +11,26 @@ namespace AssignmentOne.GeoShapes.Tests
     {
 
         [TestMethod()]
-        public void GetAreaTest_0()
+        [DataRow(0,0)]
+        [DataRow(7, 153.94f)]
+        [DataRow(7.3f, 167.42f)]
+        [DataRow(-1, 0)]
+        public void GetAreaTest(float radius, float expected)
         {
-            var circle = new Circle(0);
+            var circle = new Circle(radius);
             var actual = circle.GetArea();
-            var expected = 0;
-            Assert.AreEqual(expected, actual);
-        }
-
-
-        [TestMethod()]
-        public void GetAreaTest_7()
-        {
-            var circle = new Circle(7);
-            var actual = circle.GetArea();
-            var expected = 153.94f;
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
-        public void GetAreaTest_7_3()
+        [DataRow(7.3f, 45.87f)]
+        [DataRow(2, 12.57f)]
+        [DataRow(-3, 0)]
+        [DataRow(0, 0)]
+        public void GetPerimeterTest(float radius, float expected)
         {
-            var circle = new Circle(7.3f);
-            var actual = circle.GetArea();
-            var expected = 167.42f;
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod()]
-        public void GetAreaTest__1()
-        {
-            var circle = new Circle(-1);
-            var actual = circle.GetArea();
-            var expected = 0;
-            Assert.AreEqual(expected, actual);
-        }
-
-
-        [TestMethod()]
-        public void GetPerimeterTest_7_3()
-        {
-            var circle = new Circle(7.3f);
+            var circle = new Circle(radius);
             var actual = circle.GetPerimeter();
-            var expected = 45.87f;
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod()]
-        public void GetPerimeterTest_2()
-        {
-            var circle = new Circle(2);
-            var actual = circle.GetPerimeter();
-            var expected = 12.57f;
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod()]
-        public void GetPerimeterTest__3()
-        {
-            var circle = new Circle(-3);
-            var actual = circle.GetPerimeter();
-            var expected = 0;
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod()]
-        public void GetPerimeterTest_0()
-        {
-            var circle = new Circle(0);
-            var actual = circle.GetPerimeter();
-            var expected = 0;
             Assert.AreEqual(expected, actual);
         }
     }

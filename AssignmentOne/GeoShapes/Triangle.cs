@@ -14,6 +14,10 @@ namespace AssignmentOne.GeoShapes
             Side = side;
         }
 
+        /// <summary>
+        /// Räknar ut arean på en liksidig triangel
+        /// </summary>
+        /// <returns></returns>
         public float GetArea()
         {
             if (Side <= 0)
@@ -25,6 +29,10 @@ namespace AssignmentOne.GeoShapes
             return (float)Math.Round(area, 2);
         }
 
+        /// <summary>
+        /// Räknar ut omkretsen på en liksidig triangel
+        /// </summary>
+        /// <returns></returns>
         public float GetPerimeter()
         {
             if(Side <= 0)

@@ -14,9 +14,9 @@ namespace AssignmentOne.GeoShapes.Tests
         [DataRow(8,6.93f)]
         [DataRow(-3, 0)]
         [DataRow(0, 0)]
-        public void GetAreaTest(float area, float expected)
+        public void GetAreaTest(float side, float expected)
         {
-            var triangle = new Triangle(area);
+            var triangle = new Triangle(side);
             var actual = triangle.GetArea();
             Assert.AreEqual(expected, actual);
         }
@@ -26,9 +26,9 @@ namespace AssignmentOne.GeoShapes.Tests
         [DataRow(8, 24)]
         [DataRow(0, 0)]
         [DataRow(-3, 0)]
-        public void GetPerimeterTest(float perimeter, float expected)
+        public void GetPerimeterTest(float side, float expected)
         {
-            var triangle = new Triangle(perimeter);
+            var triangle = new Triangle(side);
             var actual = triangle.GetPerimeter();
             Assert.AreEqual(expected, actual);
         }

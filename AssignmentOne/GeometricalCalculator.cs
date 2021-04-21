@@ -9,19 +9,11 @@ namespace AssignmentOne
 {
     public class GeometricalCalculator
     {
-        /*
-        public float GetArea(IGeometricalThings geoThings)
-        {
-            return 0;
-        }
-
-        public float GetPerimeter(IGeometricalThings geoThings)
-        {
-            return 0;
-        }
-        */
-
-
+        /// <summary>
+        /// Räknar ut omkretsen på en array av olika objekt/former
+        /// </summary>
+        /// <param name="geoThings"></param>
+        /// <returns></returns>
         public float GetPerimeter(IGeometricalThings[] geoThings)
         {
             if(geoThings == null)

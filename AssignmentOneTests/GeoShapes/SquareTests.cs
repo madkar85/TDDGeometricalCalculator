@@ -13,10 +13,10 @@ namespace AssignmentOne.GeoShapes.Tests
         [DataRow(8,64)]
         [DataRow(-6, 0)]
         [DataRow(0, 0)]
-        [DataRow(2.5f, 6.25f)]
-        public void GetAreaTest(float area, float expected)
+        [DataRow(2.53f, 6.40f)]
+        public void GetAreaTest(float side, float expected)
         {
-            var square = new Square(area);
+            var square = new Square(side);
             var actual = square.GetArea();
             Assert.AreEqual(expected, actual);
         }
@@ -25,10 +25,11 @@ namespace AssignmentOne.GeoShapes.Tests
         [TestMethod()]
         [DataRow(8, 32)]
         [DataRow(-8, 0)]
-        [DataRow(2.5f, 10)]
-        public void GetPerimeterTest(float perimeter, float expected)
+        [DataRow(2.57f, 10.28f)]
+        [DataRow(0, 0)]
+        public void GetPerimeterTest(float side, float expected)
         {
-            var square = new Square(perimeter);
+            var square = new Square(side);
             var actual = square.GetPerimeter();
             Assert.AreEqual(expected, actual);
         }

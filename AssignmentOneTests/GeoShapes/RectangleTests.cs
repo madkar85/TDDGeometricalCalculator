@@ -10,75 +10,28 @@ namespace AssignmentOne.GeoShapes.Tests
     public class RectangleTests
     {
         [TestMethod()]
-        public void GetAreaTest_5_3()
+        [DataRow(5,3,15)]
+        [DataRow(0, 0, 0)]
+        [DataRow(2, 3, 6)]
+        [DataRow(-2, -3, 0)]
+        [DataRow(1.33f, 6.42f, 8.54f)]
+        public void GetAreaTest(float height, float length, float expected)
         {
-            var rectangle = new Rectangle(5, 3);
+            var rectangle = new Rectangle(height, length);
             var actual = rectangle.GetArea();
-            var expected = 15;
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
-        public void GetAreaTest_0_0()
+        [DataRow(3.25f, 2.33f, 11.16f)]
+        [DataRow(12.87f, 6.26f, 38.26f)]
+        [DataRow(0, 0, 0)]
+        [DataRow(0, 4, 0)]
+        [DataRow(-1, -4, 0)]
+        public void GetPerimeterTest(float height, float length, float expected)
         {
-            var rectangle = new Rectangle(0, 0);
-            var actual = rectangle.GetArea();
-            var expected = 0;
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod()]
-        public void GetAreaTest_2_3()
-        {
-            var rectangle = new Rectangle(2, 3);
-            var actual = rectangle.GetArea();
-            var expected = 6;
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod()]
-        public void GetAreaTest__2__3()
-        {
-            var rectangle = new Rectangle(-2, -3);
-            var actual = rectangle.GetArea();
-            var expected = 0;
-            Assert.AreEqual(expected, actual);
-        }
-
-
-        [TestMethod()]
-        public void GetPerimeterTest_3_2()
-        {
-            var rectangle = new Rectangle(3.25f, 2.33f);
+            var rectangle = new Rectangle(height, length);
             var actual = rectangle.GetPerimeter();
-            var expected = 11.16f;
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod()]
-        public void GetPerimeterTest_12_6()
-        {
-            var rectangle = new Rectangle(12.87f , 6.26f);
-            var actual = rectangle.GetPerimeter();
-            var expected = 38.26f;
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod()]
-        public void GetPerimeterTest_0_0()
-        {
-            var rectangle = new Rectangle(0, 0);
-            var actual = rectangle.GetPerimeter();
-            var expected = 0;
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod()]
-        public void GetPerimeterTest_0_4()
-        {
-            var rectangle = new Rectangle(0, 4);
-            var actual = rectangle.GetPerimeter();
-            var expected = 0;
             Assert.AreEqual(expected, actual);
         }
     }

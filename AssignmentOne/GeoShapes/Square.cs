@@ -24,7 +24,8 @@ namespace AssignmentOne.GeoShapes
             {
                 return 0;
             }
-            return Side * Side;
+            var result =  Side * Side;
+            return (float)Math.Round(result, 2);
         }
         /// <summary>
         /// Räknar ut omkretsen
@@ -36,7 +37,8 @@ namespace AssignmentOne.GeoShapes
             {
                 return 0;
             }
-            return Side * 4;
+            var result =  Side * 4;
+            return (float)Math.Round(result, 2);
         }
     }
 }
