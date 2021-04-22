@@ -10,17 +10,24 @@ namespace AssignmentOne
     public class GeometricalCalculator
     {
         /// <summary>
-        /// Räknar ut omkretsen på en array av olika objekt/former
+        /// Räknar ut sammanlagda omkretsen på en array av olika objekt/former
         /// </summary>
         /// <param name="geoThings"></param>
         /// <returns></returns>
         public float GetPerimeter(IGeometricalThings[] geoThings)
         {
-            if(geoThings == null)
+            if (geoThings == null || geoThings.Length == 0)
             {
                 return 0;
             }
-            return geoThings.Sum(p=>p.GetPerimeter());
+           
+            var wrong  = geoThings.Any(p => p.GetPerimeter() <= 0);
+            if (wrong)
+            {
+                return 0;
+            }
+
+            return geoThings.Sum(p => p.GetPerimeter());
 
         }
     }
