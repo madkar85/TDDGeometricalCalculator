@@ -12,7 +12,7 @@ namespace AssignmentOne.Tests
     public class GeometricalCalculatorTests
     {
         [TestMethod()]
-        public void GetPerimeterTest()
+        public void GetPerimeterTest_5_10_2()
         {
             var geoThingsTest = new IGeometricalThings[]
             {
@@ -28,9 +28,9 @@ namespace AssignmentOne.Tests
             Assert.AreEqual(expected, actual);
         }
 
-        /*
+        
         [TestMethod()]
-        public void GetPerimeterTest_null()
+        public void GetPerimeterTest_nullValue()
         {
             var geoThingsTest = new IGeometricalThings[]
             {
@@ -42,10 +42,21 @@ namespace AssignmentOne.Tests
             var actual = geoCal.GetPerimeter(geoThingsTest);
             var expected = 0;
             Assert.AreEqual(expected, actual);
-        }*/
+        }
 
         [TestMethod()]
-        public void GetPerimeterTest_0()
+        public void GetPerimeterTest_nullArray()
+        {
+            IGeometricalThings[] geoThingsTest = null;
+            var geoCal = new GeometricalCalculator();
+
+            var actual = geoCal.GetPerimeter(geoThingsTest);
+            var expected = 0;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void GetPerimeterTest_5_0_2()
         {
             var geoThingsTest = new IGeometricalThings[]
             {
@@ -62,7 +73,7 @@ namespace AssignmentOne.Tests
         }
 
         [TestMethod()]
-        public void GetPerimeterTest__1()
+        public void GetPerimeterTest_5_2__1()
         {
             var geoThingsTest = new IGeometricalThings[]
             {
